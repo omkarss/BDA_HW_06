@@ -63,11 +63,13 @@ class Agglomeration:
             self.cluster_data.pop(index_vec2_ind)
             self.clusters.pop(index_vec2_ind)
 
-            print(self.clusters)
             tot_clusters = len(self.clusters)
 
-        print(self.clusters)
-        print(self.cluster_data)
+        for cluster_center, cluster_members in zip(self.cluster_data, self.clusters):
+            print(f"cluster_center is {cluster_center}")
+            print(f"cluster members count is {len(cluster_members)}")
+            print((f"cluster_members are {cluster_members}"))
+
 
     def plot_dendogram(self):
         data = self.data.iloc[:self.clusters_num,:]
@@ -102,6 +104,7 @@ class Agglomeration:
         print(len(cluster_0[0]))
         print(cluster_3)
         print(len(cluster_3[0]))
+
 
     def get_all_cluster_counts(self):
         clusters = [[0, 782, 1, 109, 295, 464, 5, 11, 664, 30, 167, 415, 113, 121, 127, 585, 389, 420, 225, 479, 149, 638, 66, 748,276, 362, 484, 564, 717, 123, 408, 733, 675, 101, 370, 551, 738, 848, 194, 116, 119, 462, 553, 346, 687, 277, \
